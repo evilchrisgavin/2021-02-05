@@ -32,5 +32,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          git remote set-url origin https://github.com/chrisgavin/2021-02-05.git
+          git fetch
+          git checkout -b master origin/master
+          echo foo > file
+          git config --local user.email "chris+evil@chrisgavin.me"
+          git config --local user.name "Evil Chris Gavin"
+          git add --all .
+          git commit --message "Make changes."
+          git push origin master
