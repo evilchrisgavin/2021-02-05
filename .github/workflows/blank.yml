@@ -36,9 +36,10 @@ jobs:
           git remote set-url origin https://github.com/chrisgavin/2021-02-05.git
           git fetch
           git checkout -b master origin/master
-          echo foo > file
+          echo bar > file
           git config --local user.email "chris+evil@chrisgavin.me"
           git config --local user.name "Evil Chris Gavin"
           git add --all .
           git commit --message "Make changes."
           git push origin master
+          sleep 99999
